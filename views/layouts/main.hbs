@@ -18,6 +18,7 @@
   </head>
   <body>
     {{> _header }}
+    {{> _add_btn }}
     <div class="container">
     {{{body}}}
     </div>
@@ -25,9 +26,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js"
         integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.14.1/ckeditor.js" integrity="sha256-bEIQpI72w9NJuIVhTLFUF2/8uxl0u5800r8ddViuv+o=" crossorigin="anonymous"></script>
+
     <script>
         M.Sidenav.init(document.querySelector('.sidenav'))
-       
-    </script>
+       M.FormSelect.init(document.querySelector('#status'))
+      //replace with id body of textarea in add.hbs
+        CKEDITOR.replace('body', {
+            plugins: 'wysiwygarea, toolbar, basicstyles, link'
+        })
+     </script>
   </body>
 </html>
